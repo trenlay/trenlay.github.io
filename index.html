@@ -31,7 +31,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: var(--dark);
             line-height: 1.6;
-            padding: 20px;
+            padding: 15px;
             min-height: 100vh;
         }
         
@@ -40,9 +40,9 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 40px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
+            height: calc(100vh - 30px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
             overflow: hidden;
             background-color: white;
         }
@@ -50,14 +50,14 @@
         header {
             background-color: var(--primary);
             color: white;
-            padding: 15px 20px;
+            padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
         }
         
@@ -71,7 +71,7 @@
         .toolbar-section {
             display: flex;
             align-items: center;
-            padding: 5px 10px; /* 减少内边距 */
+            padding: 3px 8px;
             border-bottom: 1px solid #e0e0e0;
         }
         
@@ -82,27 +82,27 @@
         .toolbar-label {
             font-weight: 600;
             color: var(--dark);
-            font-size: 0.8rem; /* 减小字体大小 */
-            margin-right: 10px; /* 减少右边距 */
-            min-width: 50px; /* 减小最小宽度 */
+            font-size: 0.7rem;
+            margin-right: 6px;
+            min-width: 40px;
         }
         
         button {
             background-color: var(--white);
             color: var(--dark);
             border: 1px solid #e0e0e0;
-            padding: 4px 8px; /* 减少内边距 */
-            border-radius: 4px; /* 减小圆角 */
+            padding: 2px 5px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 4px; /* 减少间距 */
-            min-height: 28px; /* 减小最小高度 */
-            font-size: 12px; /* 减小字体大小 */
-            margin-right: 6px; /* 减少右边距 */
+            gap: 3px;
+            min-height: 20px;
+            font-size: 10px;
+            margin-right: 4px;
         }
         
         button:hover {
@@ -112,22 +112,22 @@
         }
         
         select, input[type="color"] {
-            padding: 4px 6px; /* 减少内边距 */
-            border-radius: 4px; /* 减小圆角 */
+            padding: 2px 4px;
+            border-radius: 3px;
             border: 1px solid #e0e0e0;
             background: var(--white);
-            min-height: 28px; /* 减小最小高度 */
-            font-size: 12px; /* 减小字体大小 */
-            margin-right: 6px; /* 减少右边距 */
+            min-height: 20px;
+            font-size: 10px;
+            margin-right: 4px;
         }
         
         select {
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 6px center;
-            background-size: 12px; /* 减小图标大小 */
-            padding-right: 24px; /* 减小右边距 */
+            background-position: right 4px center;
+            background-size: 10px;
+            padding-right: 18px;
         }
         
         .editor-preview-container {
@@ -149,29 +149,29 @@
         
         .section-header {
             background-color: #ecf0f1;
-            padding: 8px 15px; /* 减少内边距 */
+            padding: 6px 12px;
             font-weight: bold;
             border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.9rem; /* 减小字体大小 */
+            font-size: 0.8rem;
         }
         
         .section-info {
-            font-size: 0.7rem; /* 减小字体大小 */
+            font-size: 0.6rem;
             color: #7f8c8d;
             font-weight: normal;
         }
         
         .editor {
             flex: 1;
-            padding: 15px; /* 减少内边距 */
+            padding: 12px;
             overflow-y: auto;
             border: none;
             outline: none;
-            font-size: 14px; /* 减小字体大小 */
-            line-height: 1.5;
+            font-size: 13px;
+            line-height: 1.4;
             resize: none;
             min-height: 100%;
             background-color: white;
@@ -179,7 +179,7 @@
         
         .preview {
             flex: 1;
-            padding: 15px; /* 减少内边距 */
+            padding: 12px;
             overflow-y: auto;
             background-color: #f9f9f9;
             border-left: 1px solid #e0e0e0;
@@ -187,10 +187,10 @@
         
         .status-bar {
             background-color: #ecf0f1;
-            padding: 6px 15px; /* 减少内边距 */
+            padding: 4px 12px;
             display: flex;
             justify-content: space-between;
-            font-size: 12px; /* 减小字体大小 */
+            font-size: 10px;
             color: #7f8c8d;
         }
         
@@ -213,10 +213,10 @@
         
         .modal-content {
             background-color: white;
-            padding: 20px; /* 减少内边距 */
-            border-radius: 12px; /* 减小圆角 */
+            padding: 15px;
+            border-radius: 10px;
             width: 90%;
-            max-width: 450px; /* 减小最大宽度 */
+            max-width: 400px;
             box-shadow: var(--shadow);
         }
         
@@ -224,13 +224,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px; /* 减少下边距 */
-            padding-bottom: 8px; /* 减少内边距 */
+            margin-bottom: 10px;
+            padding-bottom: 6px;
             border-bottom: 1px solid #eee;
         }
         
         .modal-title {
-            font-size: 1.1rem; /* 减小字体大小 */
+            font-size: 1rem;
             font-weight: bold;
             color: var(--primary);
         }
@@ -238,19 +238,19 @@
         .close-btn {
             background: none;
             border: none;
-            font-size: 1.3rem; /* 减小字体大小 */
+            font-size: 1.1rem;
             cursor: pointer;
             color: var(--gray);
         }
         
         .modal-body {
-            margin-bottom: 15px; /* 减少下边距 */
+            margin-bottom: 12px;
         }
         
         .modal-footer {
             display: flex;
             justify-content: flex-end;
-            gap: 8px; /* 减少间距 */
+            gap: 6px;
         }
         
         .btn-primary {
@@ -266,41 +266,41 @@
         .loading {
             display: none;
             text-align: center;
-            padding: 15px; /* 减少内边距 */
+            padding: 12px;
             font-style: italic;
             color: #7f8c8d;
-            font-size: 0.9rem; /* 减小字体大小 */
+            font-size: 0.8rem;
         }
         
         .preview-content {
             background-color: white;
-            padding: 15px; /* 减少内边距 */
+            padding: 12px;
             min-height: 100%;
-            box-shadow: 0 0 8px rgba(0,0,0,0.05); /* 减小阴影 */
-            line-height: 1.6;
-            font-size: 14px; /* 减小字体大小 */
+            box-shadow: 0 0 6px rgba(0,0,0,0.05);
+            line-height: 1.5;
+            font-size: 13px;
         }
         
         .math-formula {
-            margin: 8px 0; /* 减少边距 */
-            padding: 8px; /* 减少内边距 */
+            margin: 6px 0;
+            padding: 6px;
             background-color: #f8f9fa;
-            border-radius: 3px; /* 减小圆角 */
-            border-left: 3px solid var(--primary); /* 减小边框宽度 */
+            border-radius: 2px;
+            border-left: 2px solid var(--primary);
         }
         
         .formula-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px; /* 减少间距 */
-            margin-top: 8px; /* 减少上边距 */
+            gap: 2px;
+            margin-top: 6px;
         }
         
         .formula-btn {
             background-color: #9b59b6;
             color: white;
-            font-size: 11px; /* 减小字体大小 */
-            padding: 4px 8px; /* 减少内边距 */
+            font-size: 9px;
+            padding: 2px 5px;
         }
         
         .formula-btn:hover {
@@ -308,11 +308,11 @@
         }
         
         .katex { 
-            font-size: 1em; /* 减小字体大小 */
-            padding: 1px 3px; /* 减少内边距 */
+            font-size: 0.9em;
+            padding: 1px 2px;
         }
         .katex-display {
-            margin: 1em 0; /* 减少边距 */
+            margin: 0.8em 0;
             text-align: center;
             overflow-x: auto;
             overflow-y: hidden;
@@ -337,30 +337,30 @@
             background-color: var(--white);
             color: var(--dark);
             border: 1px solid #e0e0e0;
-            padding: 4px 8px; /* 减少内边距 */
-            border-radius: 4px; /* 减小圆角 */
+            padding: 2px 5px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 4px; /* 减少间距 */
-            min-height: 28px; /* 减小最小高度 */
-            font-size: 12px; /* 减小字体大小 */
-            margin-right: 6px; /* 减少右边距 */
+            gap: 3px;
+            min-height: 20px;
+            font-size: 10px;
+            margin-right: 4px;
         }
         
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 140px; /* 减小最小宽度 */
-            box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2); /* 减小阴影 */
+            min-width: 120px;
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            border-radius: 4px; /* 减小圆角 */
+            border-radius: 3px;
             overflow: hidden;
-            margin-top: 4px; /* 减少上边距 */
+            margin-top: 3px;
         }
         
         .dropdown-content button {
@@ -385,24 +385,24 @@
         .menu-styles-section {
             display: flex;
             align-items: center;
-            padding: 5px 10px; /* 减少内边距 */
+            padding: 3px 8px;
             border-bottom: 1px solid #e0e0e0;
             flex-wrap: wrap;
         }
         
         .menu-styles-section .toolbar-label {
-            margin-right: 8px; /* 减少右边距 */
+            margin-right: 5px;
         }
         
         .menu-styles-section .dropdown {
-            margin-right: 12px; /* 减少右边距 */
+            margin-right: 8px;
         }
         
         /* 字体与格式在同一行，但分为两部分 */
         .font-format-section {
             display: flex;
             align-items: center;
-            padding: 5px 10px; /* 减少内边距 */
+            padding: 3px 8px;
             border-bottom: 1px solid #e0e0e0;
         }
         
@@ -413,31 +413,31 @@
         }
         
         .font-part {
-            border-right: 2px solid #e0e0e0;
-            padding-right: 12px; /* 减少内边距 */
-            margin-right: 12px; /* 减少右边距 */
+            border-right: 1px solid #e0e0e0;
+            padding-right: 8px;
+            margin-right: 8px;
         }
         
         .format-part {
-            padding-left: 4px; /* 减少内边距 */
+            padding-left: 3px;
         }
         
         /* 数学公式标签页样式 */
         .formula-tabs {
             display: flex;
-            margin-bottom: 8px; /* 减少下边距 */
+            margin-bottom: 4px;
             border-bottom: 1px solid #e0e0e0;
         }
         
         .formula-tab {
-            padding: 6px 12px; /* 减少内边距 */
+            padding: 4px 8px;
             background: #f5f5f5;
             border: none;
-            border-radius: 4px 4px 0 0; /* 减小圆角 */
-            margin-right: 4px; /* 减少右边距 */
+            border-radius: 2px 2px 0 0;
+            margin-right: 2px;
             cursor: pointer;
-            font-size: 12px; /* 减小字体大小 */
-            transition: all 0.3s;
+            font-size: 9px;
+            transition: all 0.2s;
         }
         
         .formula-tab.active {
@@ -452,12 +452,12 @@
         .formula-tab-content.active {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px; /* 减少间距 */
+            gap: 2px;
         }
         
         /* 图标大小调整 */
         .fa, .fas, .far, .fal, .fad, .fab {
-            font-size: 12px; /* 减小图标大小 */
+            font-size: 10px;
         }
         
         @media (max-width: 768px) {
@@ -477,17 +477,17 @@
             
             .toolbar-label {
                 width: 100%;
-                margin-bottom: 4px; /* 减少下边距 */
+                margin-bottom: 2px;
             }
             
             button {
-                padding: 4px 6px; /* 减少内边距 */
-                font-size: 11px; /* 减小字体大小 */
+                padding: 2px 4px;
+                font-size: 9px;
             }
             
             .editor, .preview {
-                padding: 12px; /* 减少内边距 */
-                font-size: 13px; /* 减小字体大小 */
+                padding: 10px;
+                font-size: 12px;
             }
             
             .formula-buttons {
@@ -500,7 +500,7 @@
             }
             
             .menu-styles-section .dropdown {
-                margin-bottom: 6px; /* 减少下边距 */
+                margin-bottom: 4px;
             }
             
             .font-format-section {
@@ -513,7 +513,7 @@
                 border-right: none;
                 padding-right: 0;
                 margin-right: 0;
-                margin-bottom: 8px; /* 减少下边距 */
+                margin-bottom: 4px;
             }
             
             .format-part {
@@ -731,8 +731,8 @@
             <div class="modal-body">
                 <p>选择要打开的Word文档(.docx):</p>
                 <input type="file" id="fileInput" class="file-input" accept=".docx,.doc" style="display: none;">
-                <button id="selectFileBtn" style="margin-top: 8px; width: 100%;">选择文件</button>
-                <div id="fileName" style="margin-top: 8px; font-style: italic; font-size: 0.9rem;"></div>
+                <button id="selectFileBtn" style="margin-top: 6px; width: 100%; font-size: 10px; padding: 4px;">选择文件</button>
+                <div id="fileName" style="margin-top: 6px; font-style: italic; font-size: 0.8rem;"></div>
                 <div class="loading" id="fileLoading">正在处理文档，请稍候...</div>
             </div>
             <div class="modal-footer">
@@ -751,13 +751,13 @@
             </div>
             <div class="modal-body">
                 <p>请输入文件名:</p>
-                <input type="text" id="fileNameInput" placeholder="文档名称" style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 6px; border: 1px solid #ddd; font-size: 0.9rem;">
-                <div id="exportType" style="margin-top: 12px;">
+                <input type="text" id="fileNameInput" placeholder="文档名称" style="width: 100%; padding: 6px; margin-top: 6px; border-radius: 4px; border: 1px solid #ddd; font-size: 0.8rem;">
+                <div id="exportType" style="margin-top: 10px;">
                     <p>导出格式:</p>
                     <input type="radio" id="exportWord" name="exportType" value="word" checked>
-                    <label for="exportWord">Word文档 (.docx)</label><br>
+                    <label for="exportWord" style="font-size: 0.8rem;">Word文档 (.docx)</label><br>
                     <input type="radio" id="exportPdf" name="exportType" value="pdf">
-                    <label for="exportPdf">PDF文档 (.pdf)</label>
+                    <label for="exportPdf" style="font-size: 0.8rem;">PDF文档 (.pdf)</label>
                 </div>
             </div>
             <div class="modal-footer">
@@ -769,14 +769,14 @@
     
     <!-- 公式帮助模态框 -->
     <div id="formulaHelpModal" class="modal">
-        <div class="modal-content" style="max-width: 600px;">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-header">
                 <div class="modal-title"><i class="fas fa-square-root-alt"></i> 数学公式帮助</div>
                 <button class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
                 <p>在编辑区域使用以下语法编写数学公式：</p>
-                <ul style="margin: 8px 0 8px 20px; font-size: 0.9rem;">
+                <ul style="margin: 6px 0 6px 18px; font-size: 0.8rem;">
                     <li>行内公式：使用单个美元符号，例如：$E = mc^2$</li>
                     <li>独立公式：使用双美元符号，例如：$$E = mc^2$$</li>
                 </ul>
@@ -794,7 +794,7 @@
                     <button class="formula-btn" data-formula="\\infty \\partial \\nabla">特殊符号</button>
                 </div>
                 
-                <div style="margin-top: 15px;">
+                <div style="margin-top: 12px;">
                     <p>常用公式示例：</p>
                     <div class="math-formula">
                         <p>二次方程求根公式：$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$</p>
