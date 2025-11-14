@@ -380,8 +380,8 @@
             display: block;
         }
         
-        /* 菜单和样式在同一行 */
-        .menu-styles-section {
+        /* 合并菜单、字体、格式、样式到一行 */
+        .main-toolbar-section {
             display: flex;
             align-items: center;
             padding: 3px 8px;
@@ -389,36 +389,26 @@
             flex-wrap: wrap;
         }
         
-        .menu-styles-section .toolbar-label {
+        .main-toolbar-section .toolbar-label {
             margin-right: 5px;
         }
         
-        .menu-styles-section .dropdown {
+        .main-toolbar-section .dropdown {
             margin-right: 8px;
         }
         
-        /* 字体与格式在同一行，但分为两部分 */
-        .font-format-section {
+        .menu-part, .font-part, .format-part, .style-part {
             display: flex;
             align-items: center;
-            padding: 3px 8px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .font-part, .format-part {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-        
-        .font-part {
+            margin-right: 15px;
+            padding-right: 15px;
             border-right: 1px solid #e0e0e0;
-            padding-right: 8px;
-            margin-right: 8px;
         }
         
-        .format-part {
-            padding-left: 3px;
+        .style-part {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
         }
         
         /* 数学公式标签页样式 - 竖向排列 */
@@ -465,6 +455,31 @@
             align-content: flex-start;
         }
         
+        /* 可折叠公式栏 */
+        .collapsible {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapsed {
+            max-height: 0;
+        }
+        
+        .expand-btn {
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            padding: 2px 6px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 10px;
+            margin-left: 8px;
+        }
+        
+        .expand-btn:hover {
+            background-color: #8e44ad;
+        }
+        
         /* 图标大小调整 */
         .fa, .fas, .far, .fal, .fad, .fab {
             font-size: 10px;
@@ -504,30 +519,23 @@
                 justify-content: center;
             }
             
-            .menu-styles-section {
+            .main-toolbar-section {
                 flex-direction: column;
                 align-items: flex-start;
             }
             
-            .menu-styles-section .dropdown {
-                margin-bottom: 4px;
-            }
-            
-            .font-format-section {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .font-part, .format-part {
+            .menu-part, .font-part, .format-part, .style-part {
                 width: 100%;
                 border-right: none;
                 padding-right: 0;
                 margin-right: 0;
                 margin-bottom: 4px;
+                padding-bottom: 4px;
+                border-bottom: 1px solid #e0e0e0;
             }
             
-            .format-part {
-                padding-left: 0;
+            .style-part {
+                border-bottom: none;
             }
             
             .formula-tabs-container {
@@ -557,33 +565,21 @@
         </header>
         
         <div class="toolbar">
-            <!-- 菜单栏和样式栏在同一行 -->
-            <div class="menu-styles-section">
-                <span class="toolbar-label">菜单:</span>
-                <div class="dropdown">
-                    <button class="dropdown-btn"><i class="fas fa-bars"></i> 文件 <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <button id="newBtn"><i class="fas fa-file"></i> 新建</button>
-                        <button id="openBtn"><i class="fas fa-folder-open"></i> 打开</button>
-                        <button id="saveBtn"><i class="fas fa-save"></i> 保存</button>
-                        <button id="exportBtn"><i class="fas fa-file-export"></i> 导出</button>
+            <!-- 菜单、字体、格式、样式合并到一行 -->
+            <div class="main-toolbar-section">
+                <div class="menu-part">
+                    <span class="toolbar-label">菜单:</span>
+                    <div class="dropdown">
+                        <button class="dropdown-btn"><i class="fas fa-bars"></i> 文件 <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <button id="newBtn"><i class="fas fa-file"></i> 新建</button>
+                            <button id="openBtn"><i class="fas fa-folder-open"></i> 打开</button>
+                            <button id="saveBtn"><i class="fas fa-save"></i> 保存</button>
+                            <button id="exportBtn"><i class="fas fa-file-export"></i> 导出</button>
+                        </div>
                     </div>
                 </div>
                 
-                <span class="toolbar-label">样式:</span>
-                <div class="dropdown">
-                    <button class="dropdown-btn"><i class="fas fa-paint-brush"></i> 样式 <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <button id="questionBtn" class="style-btn"><i class="fas fa-question-circle"></i> 题目</button>
-                        <button id="answerBtn" class="style-btn"><i class="fas fa-check-circle"></i> 答案</button>
-                        <button id="analysisBtn" class="style-btn"><i class="fas fa-lightbulb"></i> 解析</button>
-                        <button id="tagBtn" class="style-btn"><i class="fas fa-tag"></i> 标签</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 字体与格式栏在同一行但分为两部分 -->
-            <div class="font-format-section">
                 <div class="font-part">
                     <span class="toolbar-label">字体:</span>
                     <select id="fontFamily">
@@ -606,16 +602,6 @@
                         <option value="20px">20px</option>
                         <option value="22px">22px</option>
                         <option value="24px">24px</option>
-                        <option value="26px">26px</option>
-                        <option value="28px">28px</option>
-                        <option value="30px">30px</option>
-                        <option value="32px">32px</option>
-                        <option value="36px">36px</option>
-                        <option value="40px">40px</option>
-                        <option value="48px">48px</option>
-                        <option value="56px">56px</option>
-                        <option value="64px">64px</option>
-                        <option value="72px">72px</option>
                     </select>
                     
                     <input type="color" id="fontColor" title="字体颜色">
@@ -642,24 +628,36 @@
                         <option value="normal">标准字距</option>
                         <option value="1px">紧凑</option>
                         <option value="2px">宽松</option>
-                        <option value="3px">很宽松</option>
                     </select>
                     
                     <select id="lineHeight">
                         <option value="1">单倍行距</option>
                         <option value="1.15" selected>1.15倍行距</option>
                         <option value="1.5">1.5倍行距</option>
-                        <option value="2">双倍行距</option>
                     </select>
+                </div>
+                
+                <div class="style-part">
+                    <span class="toolbar-label">样式:</span>
+                    <div class="dropdown">
+                        <button class="dropdown-btn"><i class="fas fa-paint-brush"></i> 样式 <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <button id="questionBtn" class="style-btn"><i class="fas fa-question-circle"></i> 题目</button>
+                            <button id="answerBtn" class="style-btn"><i class="fas fa-check-circle"></i> 答案</button>
+                            <button id="analysisBtn" class="style-btn"><i class="fas fa-lightbulb"></i> 解析</button>
+                            <button id="tagBtn" class="style-btn"><i class="fas fa-tag"></i> 标签</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- 数学公式栏 - 竖向分页标签形式 -->
+            <!-- 数学公式栏 - 可折叠 -->
             <div class="toolbar-section">
                 <span class="toolbar-label">公式:</span>
                 <button id="insertFormulaBtn"><i class="fas fa-square-root-alt"></i> 插入公式</button>
+                <button id="toggleFormulaBtn" class="expand-btn"><i class="fas fa-chevron-down"></i> 展开</button>
                 
-                <div class="formula-tabs-container">
+                <div class="formula-tabs-container collapsible collapsed" id="formulaContainer">
                     <div class="formula-tabs">
                         <button class="formula-tab active" data-tab="basic">基础</button>
                         <button class="formula-tab" data-tab="operators">运算符</button>
@@ -870,6 +868,8 @@
         const saveBtn = document.getElementById('saveBtn');
         const wordCount = document.getElementById('wordCount');
         const insertFormulaBtn = document.getElementById('insertFormulaBtn');
+        const toggleFormulaBtn = document.getElementById('toggleFormulaBtn');
+        const formulaContainer = document.getElementById('formulaContainer');
         
         // 工具栏按钮
         const boldBtn = document.getElementById('boldBtn');
@@ -1062,6 +1062,17 @@
                 // 显示当前标签内容
                 document.getElementById(`${tabId}-tab`).classList.add('active');
             });
+        });
+        
+        // 公式栏折叠/展开功能
+        toggleFormulaBtn.addEventListener('click', () => {
+            formulaContainer.classList.toggle('collapsed');
+            
+            if (formulaContainer.classList.contains('collapsed')) {
+                toggleFormulaBtn.innerHTML = '<i class="fas fa-chevron-down"></i> 展开';
+            } else {
+                toggleFormulaBtn.innerHTML = '<i class="fas fa-chevron-up"></i> 折叠';
+            }
         });
         
         closeFormulaHelpBtn.addEventListener('click', () => {
