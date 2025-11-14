@@ -293,7 +293,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 2px;
-            margin-top: 6px;
         }
         
         .formula-btn {
@@ -422,22 +421,31 @@
             padding-left: 3px;
         }
         
-        /* 数学公式标签页样式 */
+        /* 数学公式标签页样式 - 竖向排列 */
+        .formula-tabs-container {
+            display: flex;
+            flex: 1;
+            margin-left: 8px;
+        }
+        
         .formula-tabs {
             display: flex;
-            margin-bottom: 4px;
-            border-bottom: 1px solid #e0e0e0;
+            flex-direction: column;
+            width: 70px;
+            border-right: 1px solid #e0e0e0;
+            margin-right: 8px;
         }
         
         .formula-tab {
-            padding: 4px 8px;
+            padding: 4px 6px;
             background: #f5f5f5;
             border: none;
-            border-radius: 2px 2px 0 0;
-            margin-right: 2px;
+            border-radius: 2px;
+            margin-bottom: 2px;
             cursor: pointer;
             font-size: 9px;
             transition: all 0.2s;
+            text-align: left;
         }
         
         .formula-tab.active {
@@ -447,12 +455,14 @@
         
         .formula-tab-content {
             display: none;
+            flex: 1;
         }
         
         .formula-tab-content.active {
             display: flex;
             flex-wrap: wrap;
             gap: 2px;
+            align-content: flex-start;
         }
         
         /* 图标大小调整 */
@@ -518,6 +528,24 @@
             
             .format-part {
                 padding-left: 0;
+            }
+            
+            .formula-tabs-container {
+                flex-direction: column;
+            }
+            
+            .formula-tabs {
+                flex-direction: row;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                margin-right: 0;
+                margin-bottom: 4px;
+            }
+            
+            .formula-tab {
+                margin-bottom: 0;
+                margin-right: 2px;
             }
         }
     </style>
@@ -626,7 +654,7 @@
                 </div>
             </div>
             
-            <!-- 数学公式栏 - 分页标签形式 -->
+            <!-- 数学公式栏 - 竖向分页标签形式 -->
             <div class="toolbar-section">
                 <span class="toolbar-label">公式:</span>
                 <button id="insertFormulaBtn"><i class="fas fa-square-root-alt"></i> 插入公式</button>
@@ -644,27 +672,41 @@
                         <button class="formula-btn" data-formula="\\sqrt{x}">平方根</button>
                         <button class="formula-btn" data-formula="x^{2}">上标</button>
                         <button class="formula-btn" data-formula="x_{2}">下标</button>
+                        <button class="formula-btn" data-formula="\\pm">加减</button>
+                        <button class="formula-btn" data-formula="\\times">乘号</button>
+                        <button class="formula-btn" data-formula="\\div">除号</button>
                     </div>
                     
                     <div class="formula-tab-content" id="operators-tab">
-                        <button class="formula-btn" data-formula="\\pm \\times \\div">运算符</button>
-                        <button class="formula-btn" data-formula="\\leq \\geq \\neq">关系符</button>
                         <button class="formula-btn" data-formula="\\sum_{i=1}^{n}">求和</button>
                         <button class="formula-btn" data-formula="\\int_{a}^{b}">积分</button>
+                        <button class="formula-btn" data-formula="\\prod_{i=1}^{n}">乘积</button>
+                        <button class="formula-btn" data-formula="\\lim_{x \\to a}">极限</button>
+                        <button class="formula-btn" data-formula="\\leq">小于等于</button>
+                        <button class="formula-btn" data-formula="\\geq">大于等于</button>
+                        <button class="formula-btn" data-formula="\\neq">不等于</button>
                     </div>
                     
                     <div class="formula-tab-content" id="greek-tab">
-                        <button class="formula-btn" data-formula="\\alpha \\beta \\gamma">希腊字母</button>
-                        <button class="formula-btn" data-formula="\\delta \\epsilon \\zeta">更多字母</button>
-                        <button class="formula-btn" data-formula="\\theta \\lambda \\mu">数学字母</button>
-                        <button class="formula-btn" data-formula="\\pi \\sigma \\omega">常用符号</button>
+                        <button class="formula-btn" data-formula="\\alpha">α</button>
+                        <button class="formula-btn" data-formula="\\beta">β</button>
+                        <button class="formula-btn" data-formula="\\gamma">γ</button>
+                        <button class="formula-btn" data-formula="\\delta">δ</button>
+                        <button class="formula-btn" data-formula="\\epsilon">ε</button>
+                        <button class="formula-btn" data-formula="\\zeta">ζ</button>
+                        <button class="formula-btn" data-formula="\\pi">π</button>
+                        <button class="formula-btn" data-formula="\\sigma">σ</button>
+                        <button class="formula-btn" data-formula="\\omega">ω</button>
                     </div>
                     
                     <div class="formula-tab-content" id="advanced-tab">
-                        <button class="formula-btn" data-formula="\\infty \\partial \\nabla">特殊符号</button>
+                        <button class="formula-btn" data-formula="\\infty">无穷</button>
+                        <button class="formula-btn" data-formula="\\partial">偏导</button>
+                        <button class="formula-btn" data-formula="\\nabla">梯度</button>
                         <button class="formula-btn" data-formula="\\binom{n}{k}">组合数</button>
-                        <button class="formula-btn" data-formula="\\lim_{x \\to a}">极限</button>
-                        <button class="formula-btn" data-formula="\\vec{v} \\cdot \\vec{w}">向量</button>
+                        <button class="formula-btn" data-formula="\\vec{v}">向量</button>
+                        <button class="formula-btn" data-formula="\\cdot">点乘</button>
+                        <button class="formula-btn" data-formula="\\times">叉乘</button>
                     </div>
                 </div>
             </div>
